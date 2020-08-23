@@ -38,7 +38,7 @@ const Items: FC = () => {
   return (
     <section>
       <Grid container justify="center" spacing={4}>
-        <Grid item xs={3} sm={4} md={2}>
+        <Grid item xs={6} sm={4} md={2}>
           <FormControl fullWidth>
             <InputLabel id="asset-type">Type</InputLabel>
             <Select labelId="asset-type" onChange={handleTypeChange}>
@@ -49,7 +49,7 @@ const Items: FC = () => {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item xs={3} sm={2} md={1}>
+        <Grid item xs={6} sm={4} md={1}>
           <FormControl fullWidth>
             <InputLabel id="asset-class">Class</InputLabel>
             <Select labelId="asset-class" onChange={handleClassChange}>
@@ -60,7 +60,7 @@ const Items: FC = () => {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item xs={3} sm={3} md={3} alignItems="center">
+        <Grid item xs={12} sm={12} md={3} alignItems="center">
           <Button
             variant="contained"
             color="primary"
