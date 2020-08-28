@@ -11,6 +11,7 @@ import {
   Markets,
 } from "./sections";
 import { AppBar, Tabs, Tab } from "@material-ui/core";
+import Creatures from "./sections/worlds/Creatures";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -62,6 +63,9 @@ function App() {
           <Tab label="Worlds" {...a11yProps(2)} />
           <Tab label="Factions" {...a11yProps(3)} />
           <Tab label="Markets" {...a11yProps(4)} />
+          <Tab label="Creatures" {...a11yProps(5)} />
+          <Tab label="Names" {...a11yProps(6)} />
+          {/* <Tab label="Cities" {...a11yProps(7)} /> */}
         </Tabs>
       </AppBar>
       <TabPanel value={activeTabIndex} index={0}>
@@ -84,22 +88,18 @@ function App() {
         <h1>Markets</h1>
         <Markets />
       </TabPanel>
-      {/* <h1>Qs</h1>
-      <Questions />
-      <h1>Factions</h1>
-      <Factions />
-      <h1>Worlds</h1>
-      <Worlds />
-      {/* <h1>Cities</h1>
-      <Cities /> */}
-      {/* <h1>Items</h1>
-      <Items />
-      <h1>Cities</h1>
-      <h1>Names</h1>
-      <Names />
-      <h1>Pinterest</h1>
-      <Pinterest /> 
-      */}
+      <TabPanel value={activeTabIndex} index={5}>
+        <h1>Creatures</h1>
+        <Creatures />
+      </TabPanel>
+      <TabPanel value={activeTabIndex} index={6}>
+        <h1>Names</h1>
+        <Names />
+      </TabPanel>
+      {/* <TabPanel value={activeTabIndex} index={7}>
+        <h1>Cities</h1>
+        <Cities />
+      </TabPanel> */}
     </div>
   );
 }

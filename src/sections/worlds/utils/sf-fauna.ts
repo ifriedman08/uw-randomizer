@@ -1,4 +1,4 @@
-import { random, sample, times } from "lodash";
+import { random, sample, times, sampleSize } from "lodash";
 import { Sentient, generateSentient } from "./sf-sentients";
 
 const faunaAmountTable = [
@@ -184,11 +184,21 @@ const generateSentientCount = () => {
   return 2;
 };
 
-const generateFaunaType = (isSentient?: boolean): FaunaType => {
+export const generateFaunaType = (
+  isSentient?: boolean,
+  isCreature?: boolean
+): FaunaType => {
+  let quirkString;
+  if (isCreature) {
+    quirkString = sampleSize(quirkTable, random(1, 4)).join(", ");
+  } else {
+    quirkString =
+      random(11) === 11 ? quirkTable[random(11) + random(11)] : undefined;
+  }
   return {
     relativeAmount: sample(relativeAmoutTable),
     locomotion: sample(locomotionTable),
-    quirk: random(11) === 11 ? quirkTable[random(11) + random(11)] : undefined,
+    quirk: quirkString,
     size: sample(faunaSizeTable),
     grouping: sample(groupingTable),
     temperament: sample(faunaTemperamentTable),
