@@ -8,6 +8,7 @@ import {
   Factions,
   Items,
   Worlds,
+  Markets,
 } from "./sections";
 import { AppBar, Tabs, Tab } from "@material-ui/core";
 
@@ -52,12 +53,15 @@ function App() {
         <Tabs
           value={activeTabIndex}
           onChange={handleChange}
+          variant="scrollable"
+          scrollButtons="auto"
           aria-label="simple tabs example"
         >
           <Tab label="Questions" {...a11yProps(0)} />
           <Tab label="Items" {...a11yProps(1)} />
           <Tab label="Worlds" {...a11yProps(2)} />
           <Tab label="Factions" {...a11yProps(3)} />
+          <Tab label="Markets" {...a11yProps(4)} />
         </Tabs>
       </AppBar>
       <TabPanel value={activeTabIndex} index={0}>
@@ -75,6 +79,10 @@ function App() {
       <TabPanel value={activeTabIndex} index={3}>
         <h1>Factions</h1>
         <Factions />
+      </TabPanel>
+      <TabPanel value={activeTabIndex} index={4}>
+        <h1>Markets</h1>
+        <Markets />
       </TabPanel>
       {/* <h1>Qs</h1>
       <Questions />
