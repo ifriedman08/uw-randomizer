@@ -9,10 +9,12 @@ import {
   Items,
   Worlds,
   Markets,
+  Events,
 } from "./sections";
 import { AppBar, Tabs, Tab } from "@material-ui/core";
 import Creatures from "./sections/worlds/Creatures";
 import Settlements from "./sections/settlement/Settlements";
+import Quests from "./sections/quests/Quests";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -67,6 +69,8 @@ function App() {
           <Tab label="Creatures" {...a11yProps(5)} />
           <Tab label="Names" {...a11yProps(6)} />
           <Tab label="Settlements" {...a11yProps(7)} />
+          <Tab label="Events" {...a11yProps(8)} />
+          <Tab label="Quests" {...a11yProps(9)} />
           {/* <Tab label="Cities" {...a11yProps(7)} /> */}
         </Tabs>
       </AppBar>
@@ -101,6 +105,14 @@ function App() {
       <TabPanel value={activeTabIndex} index={7}>
         <h1>Settlements</h1>
         <Settlements />
+      </TabPanel>
+      <TabPanel value={activeTabIndex} index={8}>
+        <h1>Events</h1>
+        <Events />
+      </TabPanel>
+      <TabPanel value={activeTabIndex} index={9}>
+        <h1>Quests</h1>
+        <Quests />
       </TabPanel>
       {/* <TabPanel value={activeTabIndex} index={7}>
         <h1>Cities</h1>

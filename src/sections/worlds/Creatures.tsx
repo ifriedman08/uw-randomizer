@@ -3,6 +3,13 @@ import FaunaView from "./Fauna";
 import { generateFaunaType, FaunaType } from "./utils/sf-fauna";
 import { Button } from "@material-ui/core";
 
+import styled from "styled-components";
+
+const Container = styled.div`
+  max-width: 400px;
+  margin: 0 auto;
+`;
+
 const Creatures: FC = () => {
   const [generatedCreature, setGeneratedCreature] = useState<FaunaType>(
     generateFaunaType(false, true)
@@ -12,7 +19,7 @@ const Creatures: FC = () => {
     setGeneratedCreature(generateFaunaType(false, true));
   };
   return (
-    <>
+    <Container>
       <Button
         variant="contained"
         color="primary"
@@ -23,7 +30,7 @@ const Creatures: FC = () => {
         Generate Creature
       </Button>
       <FaunaView fauna={generatedCreature} />
-    </>
+    </Container>
   );
 };
 

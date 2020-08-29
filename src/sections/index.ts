@@ -6,3 +6,4 @@ export { default as Factions } from "./factions/Factions";
 export { default as Items } from "./items/Items";
 export { default as Markets } from "./markets/Markets";
 export { default as Worlds } from "./worlds/Worlds";
+export { default as Events } from "./events/Events";
