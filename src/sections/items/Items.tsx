@@ -8,10 +8,14 @@ import Select from "@material-ui/core/Select";
 import { Grid, Button } from "@material-ui/core";
 import styled from "styled-components";
 
+export const Controls = styled.div`
+  padding: 8px;
+`;
 export const TagContainer = styled.div`
   text-align: left;
   display: flex;
   justify-content: center;
+  padding: 8px;
 `;
 const itemTypes = Object.keys(itemTraits);
 
@@ -37,41 +41,45 @@ const Items: FC = () => {
 
   return (
     <section>
-      <Grid container justify="center" spacing={4}>
-        <Grid item xs={6} sm={4} md={2}>
-          <FormControl fullWidth>
-            <InputLabel id="asset-type">Type</InputLabel>
-            <Select labelId="asset-type" onChange={handleTypeChange}>
-              <MenuItem value={undefined}>None</MenuItem>
-              {itemTypes.map((itemType) => (
-                <MenuItem value={itemType}>{startCase(itemType)}</MenuItem>
-              ))}
-            </Select>
-          </FormControl>
+      <Controls>
+        <Grid container justify="center" spacing={4}>
+          <Grid item xs={6} sm={4} md={2}>
+            <FormControl fullWidth>
+              <InputLabel id="asset-type">Type</InputLabel>
+              <Select labelId="asset-type" onChange={handleTypeChange}>
+                <MenuItem value={undefined}>None</MenuItem>
+                {itemTypes.map((itemType) => (
+                  <MenuItem value={itemType}>{startCase(itemType)}</MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          </Grid>
+          <Grid item xs={6} sm={4} md={1}>
+            <FormControl fullWidth>
+              <InputLabel id="asset-class">Class</InputLabel>
+              <Select labelId="asset-class" onChange={handleClassChange}>
+                <MenuItem value={undefined}>None</MenuItem>
+                {[1, 2, 3, 4].map((itemClass) => (
+                  <MenuItem value={itemClass}>{itemClass}</MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          </Grid>
+          <Grid item xs={12} sm={12} md={3} alignItems="center">
+            <Button
+              variant="contained"
+              color="primary"
+              fullWidth
+              size="large"
+              onClick={() =>
+                generateNewItem(selectedItemType, selectedItemClass)
+              }
+            >
+              Generate Item
+            </Button>
+          </Grid>
         </Grid>
-        <Grid item xs={6} sm={4} md={1}>
-          <FormControl fullWidth>
-            <InputLabel id="asset-class">Class</InputLabel>
-            <Select labelId="asset-class" onChange={handleClassChange}>
-              <MenuItem value={undefined}>None</MenuItem>
-              {[1, 2, 3, 4].map((itemClass) => (
-                <MenuItem value={itemClass}>{itemClass}</MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-        </Grid>
-        <Grid item xs={12} sm={12} md={3} alignItems="center">
-          <Button
-            variant="contained"
-            color="primary"
-            fullWidth
-            size="large"
-            onClick={() => generateNewItem(selectedItemType, selectedItemClass)}
-          >
-            Generate Item
-          </Button>
-        </Grid>
-      </Grid>
+      </Controls>
       {generatedItem && (
         <h2>
           {startCase(generatedItem?.type)} (Class {generatedItem?.classLevel})

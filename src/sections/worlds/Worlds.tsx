@@ -4,6 +4,11 @@ import { generateBiomeBasics, generatePlanet } from "./utils";
 import { uniqueId } from "lodash";
 import BiomeView from "./Biome";
 import { Grid, Button } from "@material-ui/core";
+import styled from "styled-components";
+
+export const Container = styled.section`
+  padding: 8px;
+`;
 
 const Worlds: FC = () => {
   const [generatedPlanet, setGeneratedPlanet] = useState(generatePlanet());
@@ -16,7 +21,7 @@ const Worlds: FC = () => {
     setUndergroundBiomes(
       generateBiomeBasics(undergroundBiomeCount ?? 1, "underground")
     );
-  }, [generatedPlanet]);
+  }, [generatedPlanet, surfaceBiomeCount, undergroundBiomeCount]);
 
   const generateNewPlanet = () => {
     setGeneratedPlanet(generatePlanet());
@@ -72,7 +77,7 @@ const Worlds: FC = () => {
   );
 
   return (
-    <section>
+    <Container>
       <Button
         variant="contained"
         size="large"
@@ -82,7 +87,7 @@ const Worlds: FC = () => {
         Generate New Planet
       </Button>
       {GeneratedComponent}
-    </section>
+    </Container>
   );
 };
 

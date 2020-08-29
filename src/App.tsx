@@ -3,8 +3,8 @@ import "./App.css";
 import {
   Names,
   Questions,
-  Cities,
-  Pinterest,
+  // Cities,
+  // Pinterest,
   Factions,
   Items,
   Worlds,
