@@ -7,7 +7,7 @@ const IFrame = styled.iframe`
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 80%;
+  height: 75%;
   border: 2px;
 `;
 const Names: FC = () => {
