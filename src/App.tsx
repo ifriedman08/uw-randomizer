@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import SwipeableViews from "react-swipeable-views";
+
 import "./App.css";
+
 import {
   Names,
   Questions,
@@ -50,7 +53,9 @@ function App() {
   const handleChange = (event: any, newValue: number) => {
     setActiveTabIndex(newValue);
   };
-  console.log(activeTabIndex);
+  const handleChangeIndex = (index: number) => {
+    setActiveTabIndex(index);
+  };
   return (
     <div className="App">
       <AppBar position="static">
@@ -58,7 +63,7 @@ function App() {
           value={activeTabIndex}
           onChange={handleChange}
           variant="scrollable"
-          scrollButtons="auto"
+          scrollButtons="on"
           aria-label="simple tabs example"
         >
           <Tab label="Questions" {...a11yProps(0)} />
@@ -74,50 +79,56 @@ function App() {
           {/* <Tab label="Cities" {...a11yProps(7)} /> */}
         </Tabs>
       </AppBar>
-      <TabPanel value={activeTabIndex} index={0}>
-        <h1>Qs</h1>
-        <Questions />
-      </TabPanel>
-      <TabPanel value={activeTabIndex} index={1}>
-        <h1>Items</h1>
-        <Items />
-      </TabPanel>
-      <TabPanel value={activeTabIndex} index={2}>
-        <h1>Worlds</h1>
-        <Worlds />
-      </TabPanel>
-      <TabPanel value={activeTabIndex} index={3}>
-        <h1>Factions</h1>
-        <Factions />
-      </TabPanel>
-      <TabPanel value={activeTabIndex} index={4}>
-        <h1>Markets</h1>
-        <Markets />
-      </TabPanel>
-      <TabPanel value={activeTabIndex} index={5}>
-        <h1>Creatures</h1>
-        <Creatures />
-      </TabPanel>
-      <TabPanel value={activeTabIndex} index={6}>
-        <h1>Names</h1>
-        <Names />
-      </TabPanel>
-      <TabPanel value={activeTabIndex} index={7}>
-        <h1>Settlements</h1>
-        <Settlements />
-      </TabPanel>
-      <TabPanel value={activeTabIndex} index={8}>
-        <h1>Events</h1>
-        <Events />
-      </TabPanel>
-      <TabPanel value={activeTabIndex} index={9}>
-        <h1>Quests</h1>
-        <Quests />
-      </TabPanel>
-      {/* <TabPanel value={activeTabIndex} index={7}>
+      <SwipeableViews
+        axis={"x"}
+        index={activeTabIndex}
+        onChangeIndex={handleChangeIndex}
+      >
+        <TabPanel value={activeTabIndex} index={0}>
+          <h1>Qs</h1>
+          <Questions />
+        </TabPanel>
+        <TabPanel value={activeTabIndex} index={1}>
+          <h1>Items</h1>
+          <Items />
+        </TabPanel>
+        <TabPanel value={activeTabIndex} index={2}>
+          <h1>Worlds</h1>
+          <Worlds />
+        </TabPanel>
+        <TabPanel value={activeTabIndex} index={3}>
+          <h1>Factions</h1>
+          <Factions />
+        </TabPanel>
+        <TabPanel value={activeTabIndex} index={4}>
+          <h1>Markets</h1>
+          <Markets />
+        </TabPanel>
+        <TabPanel value={activeTabIndex} index={5}>
+          <h1>Creatures</h1>
+          <Creatures />
+        </TabPanel>
+        <TabPanel value={activeTabIndex} index={6}>
+          <h1>Names</h1>
+          <Names />
+        </TabPanel>
+        <TabPanel value={activeTabIndex} index={7}>
+          <h1>Settlements</h1>
+          <Settlements />
+        </TabPanel>
+        <TabPanel value={activeTabIndex} index={8}>
+          <h1>Events</h1>
+          <Events />
+        </TabPanel>
+        <TabPanel value={activeTabIndex} index={9}>
+          <h1>Quests</h1>
+          <Quests />
+        </TabPanel>
+        {/* <TabPanel value={activeTabIndex} index={7}>
         <h1>Cities</h1>
         <Cities />
       </TabPanel> */}
+      </SwipeableViews>
     </div>
   );
 }
