@@ -65,7 +65,7 @@ const TABS = [
 function App() {
   const history = useHistory();
   const [activeTabIndex, setActiveTabIndex] = useState<number>(
-    TABS.findIndex((t) => history.location.pathname === `/${t.key}`)
+    TABS.findIndex((t) => history.location.pathname === `/${t.key}`) ?? 0
   );
   const handleChange = (event: any, newValue: number) => {
     history.push(`/${TABS[newValue].key}`);
@@ -75,7 +75,6 @@ function App() {
     history.push(`/${TABS[index].key}`);
     setActiveTabIndex(index);
   };
-  console.log(history);
   return (
     <div className="App">
       <AppBar position="static">

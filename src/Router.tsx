@@ -8,6 +8,7 @@ const Router: FC<IProps> = () => {
   return (
     <HashRouter basename="/">
       <Route component={App} path="/:key" />
+      <Route component={App} path="/" exact />
     </HashRouter>
   );
 };
