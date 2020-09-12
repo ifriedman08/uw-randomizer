@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import App from "./App";
-import { HashRouter, Route, BrowserRouter } from "react-router-dom";
+import { Route, BrowserRouter } from "react-router-dom";
 
 interface IProps {}
 
