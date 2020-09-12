@@ -15,7 +15,7 @@ const Names: FC = () => {
     <>
       <Button
         variant="text"
-        color="default"
+        color="secondary"
         size="medium"
         onClick={() =>
           window.open("https://donjon.bin.sh/scifi/name/", "_blank")
@@ -23,9 +23,10 @@ const Names: FC = () => {
       >
         Link to Donjon
       </Button>
+      |
       <Button
         variant="text"
-        color="default"
+        color="secondary"
         size="medium"
         onClick={() =>
           window.open(
@@ -34,7 +35,7 @@ const Names: FC = () => {
           )
         }
       >
-        Fantasy Name Generator
+        Link to FNG
       </Button>
     </>
   );
