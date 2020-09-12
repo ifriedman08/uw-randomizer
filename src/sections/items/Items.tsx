@@ -49,7 +49,9 @@ const Items: FC = () => {
               <Select labelId="asset-type" onChange={handleTypeChange}>
                 <MenuItem value={undefined}>None</MenuItem>
                 {itemTypes.map((itemType) => (
-                  <MenuItem value={itemType}>{startCase(itemType)}</MenuItem>
+                  <MenuItem key={uniqueId()} value={itemType}>
+                    {startCase(itemType)}
+                  </MenuItem>
                 ))}
               </Select>
             </FormControl>
@@ -60,7 +62,9 @@ const Items: FC = () => {
               <Select labelId="asset-class" onChange={handleClassChange}>
                 <MenuItem value={undefined}>None</MenuItem>
                 {[1, 2, 3, 4].map((itemClass) => (
-                  <MenuItem value={itemClass}>{itemClass}</MenuItem>
+                  <MenuItem key={uniqueId()} value={itemClass}>
+                    {itemClass}
+                  </MenuItem>
                 ))}
               </Select>
             </FormControl>
@@ -109,14 +113,14 @@ const Items: FC = () => {
               {tag1.name === "Switching" &&
                 generatedItem.switching &&
                 generatedItem.switching.map((tag2) => (
-                  <p>
+                  <p key={uniqueId()}>
                     &#9;<strong>↳ {tag2.name}:</strong> {tag2.description}
                   </p>
                 ))}
               {tag1.name === "Deadly" &&
                 generatedItem.deadly &&
                 generatedItem.deadly.map((tag2) => (
-                  <p>
+                  <p key={uniqueId()}>
                     <strong>↳ {tag2.name}:</strong> {tag2.description}
                   </p>
                 ))}
