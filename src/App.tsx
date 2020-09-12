@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SwipeableViews from "react-swipeable-views";
+import { Route, useHistory } from "react-router-dom";
 
 import "./App.css";
 
@@ -18,6 +19,7 @@ import { AppBar, Tabs, Tab } from "@material-ui/core";
 import Creatures from "./sections/worlds/Creatures";
 import Settlements from "./sections/settlement/Settlements";
 import Quests from "./sections/quests/Quests";
+import { startCase } from "lodash";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -48,12 +50,29 @@ function a11yProps(index: any) {
   };
 }
 
+const TABS = [
+  { key: "questions", component: <Questions /> },
+  { key: "items", component: <Items /> },
+  { key: "worlds", component: <Worlds /> },
+  { key: "factions", component: <Factions /> },
+  { key: "markets", component: <Markets /> },
+  { key: "creatures", component: <Creatures /> },
+  { key: "names", component: <Names /> },
+  { key: "settlements", component: <Settlements /> },
+  { key: "events", component: <Events /> },
+  { key: "quests", component: <Quests /> },
+];
 function App() {
-  const [activeTabIndex, setActiveTabIndex] = useState<number>(0);
+  const history = useHistory();
+  const [activeTabIndex, setActiveTabIndex] = useState<number>(
+    TABS.findIndex((t) => history.location.pathname === `/${t.key}`)
+  );
   const handleChange = (event: any, newValue: number) => {
+    history.push(`/${TABS[newValue].key}`);
     setActiveTabIndex(newValue);
   };
   const handleChangeIndex = (index: number) => {
+    history.push(`/${TABS[index].key}`);
     setActiveTabIndex(index);
   };
   return (
@@ -66,17 +85,9 @@ function App() {
           scrollButtons="on"
           aria-label="simple tabs example"
         >
-          <Tab label="Questions" {...a11yProps(0)} />
-          <Tab label="Items" {...a11yProps(1)} />
-          <Tab label="Worlds" {...a11yProps(2)} />
-          <Tab label="Factions" {...a11yProps(3)} />
-          <Tab label="Markets" {...a11yProps(4)} />
-          <Tab label="Creatures" {...a11yProps(5)} />
-          <Tab label="Names" {...a11yProps(6)} />
-          <Tab label="Settlements" {...a11yProps(7)} />
-          <Tab label="Events" {...a11yProps(8)} />
-          <Tab label="Quests" {...a11yProps(9)} />
-          {/* <Tab label="Cities" {...a11yProps(7)} /> */}
+          {TABS.map((t, idx) => (
+            <Tab label={startCase(t.key)} {...a11yProps(idx)} />
+          ))}
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -84,50 +95,14 @@ function App() {
         index={activeTabIndex}
         onChangeIndex={handleChangeIndex}
       >
-        <TabPanel value={activeTabIndex} index={0}>
-          <h1>Qs</h1>
-          <Questions />
-        </TabPanel>
-        <TabPanel value={activeTabIndex} index={1}>
-          <h1>Items</h1>
-          <Items />
-        </TabPanel>
-        <TabPanel value={activeTabIndex} index={2}>
-          <h1>Worlds</h1>
-          <Worlds />
-        </TabPanel>
-        <TabPanel value={activeTabIndex} index={3}>
-          <h1>Factions</h1>
-          <Factions />
-        </TabPanel>
-        <TabPanel value={activeTabIndex} index={4}>
-          <h1>Markets</h1>
-          <Markets />
-        </TabPanel>
-        <TabPanel value={activeTabIndex} index={5}>
-          <h1>Creatures</h1>
-          <Creatures />
-        </TabPanel>
-        <TabPanel value={activeTabIndex} index={6}>
-          <h1>Names</h1>
-          <Names />
-        </TabPanel>
-        <TabPanel value={activeTabIndex} index={7}>
-          <h1>Settlements</h1>
-          <Settlements />
-        </TabPanel>
-        <TabPanel value={activeTabIndex} index={8}>
-          <h1>Events</h1>
-          <Events />
-        </TabPanel>
-        <TabPanel value={activeTabIndex} index={9}>
-          <h1>Quests</h1>
-          <Quests />
-        </TabPanel>
-        {/* <TabPanel value={activeTabIndex} index={7}>
-        <h1>Cities</h1>
-        <Cities />
-      </TabPanel> */}
+        {TABS.map((t, idx) => (
+          <Route path={`/${t.key}`}>
+            <TabPanel value={activeTabIndex} index={idx}>
+              <h1>{t.key}</h1>
+              {t.component}
+            </TabPanel>
+          </Route>
+        ))}
       </SwipeableViews>
     </div>
   );
