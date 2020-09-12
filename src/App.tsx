@@ -95,6 +95,12 @@ function App() {
         index={activeTabIndex}
         onChangeIndex={handleChangeIndex}
       >
+        <Route path="/">
+          <TabPanel value={activeTabIndex} index={0}>
+            <h1>{TABS[0].key}</h1>
+            {TABS[0].component}
+          </TabPanel>
+        </Route>
         {TABS.map((t, idx) => (
           <Route path={`/${t.key}`}>
             <TabPanel value={activeTabIndex} index={idx}>
