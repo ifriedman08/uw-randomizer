@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SwipeableViews from "react-swipeable-views";
-import { Route, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import "./App.css";
 
@@ -75,6 +75,7 @@ function App() {
     history.push(`/${TABS[index].key}`);
     setActiveTabIndex(index);
   };
+  console.log(history);
   return (
     <div className="App">
       <AppBar position="static">
@@ -95,20 +96,20 @@ function App() {
         index={activeTabIndex}
         onChangeIndex={handleChangeIndex}
       >
-        <Route path="/">
+        {TABS.map((t, idx) => (
+          // <Route path={`/${t.key}`}>
+          <TabPanel value={activeTabIndex} index={idx}>
+            <h1>{startCase(t.key)}</h1>
+            {t.component}
+          </TabPanel>
+          // </Route>
+        ))}
+        {/* <Route path="/" exact>
           <TabPanel value={activeTabIndex} index={0}>
-            <h1>{TABS[0].key}</h1>
+            <h1>{startCase(TABS[0].key)}</h1>
             {TABS[0].component}
           </TabPanel>
-        </Route>
-        {TABS.map((t, idx) => (
-          <Route path={`/${t.key}`}>
-            <TabPanel value={activeTabIndex} index={idx}>
-              <h1>{t.key}</h1>
-              {t.component}
-            </TabPanel>
-          </Route>
-        ))}
+        </Route> */}
       </SwipeableViews>
     </div>
   );
