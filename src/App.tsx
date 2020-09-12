@@ -64,9 +64,13 @@ const TABS = [
 ];
 function App() {
   const history = useHistory();
-  const [activeTabIndex, setActiveTabIndex] = useState<number>(
-    TABS.findIndex((t) => history.location.pathname === `/${t.key}`) ?? 0
+  let defaultTabIndex = TABS.findIndex(
+    (t) => history.location.pathname === `/${t.key}`
   );
+  if (defaultTabIndex < 0) {
+    defaultTabIndex = 0;
+  }
+  const [activeTabIndex, setActiveTabIndex] = useState<number>(defaultTabIndex);
   const handleChange = (event: any, newValue: number) => {
     history.push(`/${TABS[newValue].key}`);
     setActiveTabIndex(newValue);
@@ -75,6 +79,7 @@ function App() {
     history.push(`/${TABS[index].key}`);
     setActiveTabIndex(index);
   };
+  console.log(history);
   return (
     <div className="App">
       <AppBar position="static">
@@ -96,19 +101,11 @@ function App() {
         onChangeIndex={handleChangeIndex}
       >
         {TABS.map((t, idx) => (
-          // <Route path={`/${t.key}`}>
           <TabPanel value={activeTabIndex} index={idx}>
             <h1>{startCase(t.key)}</h1>
             {t.component}
           </TabPanel>
-          // </Route>
         ))}
-        {/* <Route path="/" exact>
-          <TabPanel value={activeTabIndex} index={0}>
-            <h1>{startCase(TABS[0].key)}</h1>
-            {TABS[0].component}
-          </TabPanel>
-        </Route> */}
       </SwipeableViews>
     </div>
   );

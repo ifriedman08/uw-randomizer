@@ -1,15 +1,15 @@
 import React, { FC } from "react";
 import App from "./App";
-import { HashRouter, Route } from "react-router-dom";
+import { HashRouter, Route, BrowserRouter } from "react-router-dom";
 
 interface IProps {}
 
 const Router: FC<IProps> = () => {
   return (
-    <HashRouter basename="/">
-      <Route component={App} path="/:key" />
-      <Route component={App} path="/" exact />
-    </HashRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Route component={App} path={"/:key"} />
+      <Route component={App} path={"/"} exact />
+    </BrowserRouter>
   );
 };
 
