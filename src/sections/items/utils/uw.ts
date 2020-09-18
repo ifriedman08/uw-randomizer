@@ -1320,12 +1320,13 @@ export const itemTraits: ItemTraits = {
 };
 
 const generateMeleeWeapon = (itemClass?: number): GeneratedItem => {
-  const classLevel = itemClass ?? random(2) + 2;
-  const tags = sampleSize(itemTraits.melee.tags, classLevel);
+  const classLevel = itemClass || itemClass === 0 ? itemClass : random(2) + 1;
+  const tags = sampleSize(itemTraits.melee.tags, classLevel + 1);
   let switching;
   if (tags.some((tags) => tags.name === "Switching")) {
     switching = sampleSize(itemTraits.melee.tags, 2);
   }
+
   return {
     classLevel,
     tags,

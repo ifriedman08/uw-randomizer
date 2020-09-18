@@ -20,6 +20,8 @@ import Creatures from "./sections/worlds/Creatures";
 import Settlements from "./sections/settlement/Settlements";
 import Quests from "./sections/quests/Quests";
 import { startCase } from "lodash";
+import Characters from "./sections/characters/Characters";
+import Mods from "./sections/mods/Mods";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -53,8 +55,10 @@ function a11yProps(index: any) {
 const TABS = [
   { key: "questions", component: <Questions /> },
   { key: "items", component: <Items /> },
+  { key: "mods", component: <Mods /> },
   { key: "worlds", component: <Worlds /> },
   { key: "factions", component: <Factions /> },
+  { key: "characters", component: <Characters /> },
   { key: "markets", component: <Markets /> },
   { key: "creatures", component: <Creatures /> },
   { key: "names", component: <Names /> },
