@@ -1,5 +1,4 @@
 import { random, sample, sampleSize } from "lodash";
-import { GeneratedItem, generateItemTraits } from "../../items/utils";
 
 export interface Vessel {
   tier: number;
