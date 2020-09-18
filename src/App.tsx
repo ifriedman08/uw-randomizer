@@ -22,6 +22,7 @@ import Quests from "./sections/quests/Quests";
 import { startCase } from "lodash";
 import Characters from "./sections/characters/Characters";
 import Mods from "./sections/mods/Mods";
+import Vessels from "./sections/vessels/Vessels";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -63,6 +64,7 @@ const TABS = [
   { key: "creatures", component: <Creatures /> },
   { key: "names", component: <Names /> },
   { key: "settlements", component: <Settlements /> },
+  { key: "vessels", component: <Vessels /> },
   { key: "events", component: <Events /> },
   { key: "quests", component: <Quests /> },
 ];
