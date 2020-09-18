@@ -1,16 +1,20 @@
 import { Button } from "@material-ui/core";
 import React, { FC, useState } from "react";
 import { generateMod, Mod } from "./utils";
+import styled from "styled-components";
 
-interface IProps {}
+export const Container = styled.section`
+  margin: 0 auto;
+  max-width: 400px;
+`;
 
-const Mods: FC<IProps> = () => {
+const Mods: FC = () => {
   const [generatedMod, setGeneratedMod] = useState<Mod>(generateMod());
   const generateNewMod = () => {
     setGeneratedMod(generateMod());
   };
   return (
-    <section>
+    <Container>
       <Button variant="contained" color="primary" onClick={generateNewMod}>
         Generate Mod
       </Button>
@@ -26,7 +30,7 @@ const Mods: FC<IProps> = () => {
       {generatedMod.class?.locomotion && (
         <p>{generatedMod.class?.locomotion}</p>
       )}
-    </section>
+    </Container>
   );
 };
 
