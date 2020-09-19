@@ -591,508 +591,508 @@ You can return to your original form at any time. Assuming a shape larger than t
   },
 };
 
-const careersTable = {
-  academic: {
-    name: "academic",
-    summary:
-      "The Academic career represents years of study and learning, with a strong focus on science and logic. Academics can be found in specialist positions in other fields, leveraging their years of study.",
-    descriptions: [
-      "thin",
-      "pallid",
-      "elderly",
-      "kind-hearted",
-      "aloof",
-      "distracted",
-    ],
-    skillOptions: [
-      "education",
-      "chemistry",
-      "surgery",
-      "deduction",
-      "technobabble",
-    ],
-    iconName: "school",
-    workspaceOptions: [
-      {
-        name: "medical",
-        description:
-          "Sterile environment. Medbay, cryotubes, surgical servo arms, isolation chamber, recovery ward.",
-      },
-      {
-        name: "research",
-        description:
-          "Sensors gather scientific readings. Laboratory, containment units, sample scanners, sealed storage.",
-      },
-    ],
-    advancementOptions: [
-      "A life is saved or destroyed by science.",
-      "A vital lesson is imparted.",
-      "An experiment yields surprising results.",
-      "A subject is thoroughly analyzed.",
-      "A fascinating phenomenon is explained.",
-    ],
-  },
-  clandestine: {
-    name: "clandestine",
-    summary:
-      "The Clandestine career is a sinister profession, relying on information and invisibility. Clandestine operatives tend toward low profiles and subtlety, no matter their complimentary profession.",
-    descriptions: [
-      "hawk nosed",
-      "sinister",
-      "wiry",
-      "bland",
-      "suspicious",
-      "bald",
-    ],
-    skillOptions: [
-      "stealth",
-      "sabotage",
-      "assassination",
-      "surveillance",
-      "interrogation",
-    ],
-    iconName: "finger-print",
-    workspaceOptions: [
-      {
-        name: "stealthy",
-        description:
-          "Difficult to detect, high tech camouflage, cloaking or concealment. Scanning bafflers, sound dampening, hidden doors/rooms.",
-      },
-      {
-        name: "secure",
-        description:
-          "Sensors to track people and movement. Security cameras, monitoring stations, holding cells, security doors.",
-      },
-    ],
-    advancementOptions: [
-      "An intentional 'accident' happens.",
-      "A victim experiences true fear.",
-      "A conspiracy is uncovered.",
-      "An act is performed covertly.",
-      "A dark secret is extracted.",
-    ],
-  },
-  commercial: {
-    name: "commercial",
-    summary:
-      "The Commercial career's strength lies in making deals, acquiring goods and managing the complex web of inter-faction debt and influence. Almost all other careers benefit in some way from the Commercial's purchasing power.",
-    descriptions: [
-      "oily",
-      "well-fed",
-      "manicured",
-      "harried",
-      "miserly",
-      "cunning",
-    ],
-    skillOptions: ["outfit", "marketing", "acumen", "luxury", "bribe"],
-    iconName: "cash",
-    workspaceOptions: [
-      {
-        name: "mercantile",
-        description:
-          "Prominent advertisement, easy access. Large cargo storage space, automatic loader-unloader systems.",
-      },
-      {
-        name: "leisure",
-        description:
-          "Relaxing, inviting, well-lit. Studio, lounge, entertainment systems, recreation area.",
-      },
-    ],
-    advancementOptions: [
-      "A solution is purchased.",
-      "A frivolous expense is made.",
-      "A celebration is held.",
-      "A rich resource is found.",
-      "A cargo unit is exchanged.",
-    ],
-  },
-  explorer: {
-    name: "explorer",
-    summary:
-      "The Explorer is the most daring and risky career, forever seeking new horizons and new treasures. Other careers that regularly deal with harsh environments and unexplored reaches benefit from the Explorer's courage and survival instinct.",
-    descriptions: [
-      "weathered",
-      "battered",
-      "unkempt",
-      "rude",
-      "cheerful",
-      "brash",
-    ],
-    skillOptions: [
-      "boldly go",
-      "reconnaissance",
-      "survival",
-      "recklessness",
-      "custom vehicle",
-    ],
-    iconName: "compass",
-    workspaceOptions: [
-      {
-        name: "rugged",
-        description:
-          "Withstands harsh climates and weather. Decontamination units, hydroponics facilities, advanced water/air/waste recyclers, self-sufficient.",
-      },
-      {
-        name: "survey",
-        description:
-          "Planetary scanners (weather, geological activity, etc). Probe launcher, topography holo-projector, motor-pool.",
-      },
-    ],
-    advancementOptions: [
-      "An alien wilderness is traversed.",
-      "A bold act fails spectacularly.",
-      "A needed item is scrounged up.",
-      "A ludicrous stunt turns the tides.",
-      "A forgotten place is excavated.",
-    ],
-  },
-  industrial: {
-    name: "industrial",
-    summary:
-      "The Industrial career shapes its surroundings by constructing, improving and demolishing. Other careers benefit greatly from the Industrial's ability to create, repair, maintain a variety of machines.",
-    descriptions: [
-      "muscled",
-      "grimy",
-      "wrinkled",
-      "rigorous",
-      "rugged",
-      "focused",
-    ],
-    skillOptions: ["repair", "construction", "tinker", "upgrade", "dismantle"],
-    iconName: "construct",
-    workspaceOptions: [
-      {
-        name: "refinery",
-        description:
-          "Heavy raw-material collectors. Gathers, processes raw matter into refined materials. Material storage tanks.",
-      },
-      {
-        name: "manufactory",
-        description:
-          "Engineering bays. Builds, upgrades and repairs. Workbenches, tool racks, winches, pulleys, lifts.",
-      },
-    ],
-    advancementOptions: [
-      "A piece of junk proves pivotal.",
-      "A piece of technology is 'improved'.",
-      "A breakage occurs.",
-      "An explosion alters the situation.",
-      "A structural weakness is exposed.",
-    ],
-  },
-  military: {
-    name: "military",
-    summary:
-      "The Military career specializes in combat, with a heavy reliance on command, discipline and strategy. Careers that have to deal with hostilities or war zones benefit greatly when combined with the Military career's command of the battlefield.",
-    descriptions: [
-      "scarred",
-      "grizzled",
-      "massive",
-      "skittish",
-      "weary",
-      "grim",
-    ],
-    skillOptions: [
-      "tactics",
-      "toughness",
-      "unique weapon",
-      "heavy lifting",
-      "authority",
-    ],
-    iconName: "medal",
-    workspaceOptions: [
-      {
-        name: "armored",
-        description:
-          "Made of reinforced materials. Difficult to damage, can withstand direct impacts and explosions. Reinforced blast doors, structurally sound.",
-      },
-      {
-        name: "barracks",
-        description:
-          "Efficient, defensible, practical. Berthing for many soldiers, lockers, gym, training ring, mobilization area.",
-      },
-    ],
-    advancementOptions: [
-      "An objective is taken by force.",
-      "A perilous order is obeyed.",
-      "An injury is sustained.",
-      "A problem is resolved with firepower.",
-      "A worthy enemy is exterminated.",
-    ],
-  },
-  personality: {
-    name: "personality",
-    summary:
-      "The Personality career revolves around influencing others through charm, good looks and oratory. Personality is useful to any career that relies on persuasion or fame.",
-    descriptions: [
-      "stunning",
-      "sexy",
-      "chiselled",
-      "placid",
-      "soft",
-      "haughty",
-    ],
-    skillOptions: [
-      "fame",
-      "leadership",
-      "contacts",
-      "inspiration",
-      "diplomacy",
-    ],
-    iconName: "star",
-    workspaceOptions: [
-      {
-        name: "habitation",
-        description:
-          "Living space for many guests or crew. Communal eating rooms, extended life-support/facilities.",
-      },
-      {
-        name: "stately",
-        description:
-          "Expensive, luxurious, finely appointed décor. More expensive to maintain, but provides much higher quality of life.",
-      },
-    ],
-    advancementOptions: [
-      "A relationship changes drastically.",
-      "A statement starts or ends a fight.",
-      "A difficult promise is upheld.",
-      "A rumor spreads like wildfire.",
-      "An unlikely hero is exalted.",
-    ],
-  },
-  scoudrel: {
-    name: "scoudrel",
-    summary:
-      "The Scoundrel is the most underhanded career, relying on lies, violence, betrayal and theft to achieve goals. The Scoundrel career can be a benefit to other careers that live outside the law.",
-    descriptions: ["thick", "dapper", "sly", "meaty", "slick", "cold"],
-    skillOptions: [
-      "criminal",
-      "sneak attack",
-      "scapegoat",
-      "false identity",
-      "addict",
-    ],
-    iconName: "glasses",
-    workspaceOptions: [
-      {
-        name: "facade",
-        description:
-          "False identification/registry, disguised as something else. Crawlspaces, hidden compartments, false walls.",
-      },
-      {
-        name: "sleazy",
-        description:
-          "Ramshackle, grimy, dimly lit. Space for drinking, smoking, recreational drug use, or other vices.",
-      },
-    ],
-    advancementOptions: [
-      "A deal ends in betrayal.",
-      "A broken law goes unpunished.",
-      "A valuable is stolen.",
-      "A threat is pre-emptively removed.",
-      "An unsuspecting victim is exploited.",
-    ],
-  },
-  starfarer: {
-    name: "starfarer",
-    summary:
-      "The Starfarer career involves traveling all over the galaxy, experiencing a multitude of cultures and societies. The Starfarer's ease with spaceships, vehicles and navigation make it useful to many other careers that are on the move.",
-    descriptions: ["bony", "quick", "tall", "sunny", "restless", "tolerant"],
-    skillOptions: [
-      "weightlessness",
-      "cosmopolitan",
-      "navigation",
-      "calibrations",
-      "custom flyer",
-    ],
-    iconName: "rocket",
-    workspaceOptions: [
-      {
-        name: "navigation",
-        description:
-          "Wide bay windows, observation decks, star-charts, holo-screens. Satellite uplinks, orbital tracking systems, airspace control/coordination tower.",
-      },
-      {
-        name: "launch pad",
-        description:
-          "Aircraft/shuttle hangar with wide bay doors, launchpads for shuttles and speeders.",
-      },
-    ],
-    advancementOptions: [
-      "A passenger reaches a destination.",
-      "A solution leverages gravity.",
-      "A piloting maneuver causes a reversal.",
-      "A system is pushed to the limit.",
-      "A new culture is experienced.",
-    ],
-  },
-  technocrat: {
-    name: "technocrat",
-    summary:
-      "The Technocrat career is the most wired-in and computer-centric of the careers, focusing on programming, data and electronic warfare. Other careers benefit from the Technocrat's mastery of the computer systems that run almost all of civilized space.",
-    descriptions: [
-      "nearsighted",
-      "lanky",
-      "underfed",
-      "smug",
-      "awkward",
-      "intense",
-    ],
-    skillOptions: [
-      "upload",
-      "hijack",
-      "program",
-      "network",
-      "artificial intelligence",
-    ],
-    iconName: "power",
-    workspaceOptions: [
-      {
-        name: "communication",
-        description:
-          "High-powered communications array, transceivers, antennae. Screens, conference rooms, holo-projectors.",
-      },
-      {
-        name: "observer",
-        description:
-          "Advanced, multi-band sensors, capable of long-distance scans. Probe launchers. Recording equipment, shielded data storage.",
-      },
-    ],
-    advancementOptions: [
-      "A system's security is breached.",
-      "A solution is found on the SectorNet.",
-      "A computer crash causes chaos.",
-      "A pivotal data cluster is accessed.",
-      "An offending program is expunged.",
-    ],
-  },
-};
-const originsTable = {
-  advanced: {
-    summary:
-      "The Advanced grew up in prosperous, high tech societies, well ahead of the galactic technology curve, enjoying an unprecedented quality of life. Technologies and gadgets that would be rare or fantastical elsewhere were considered commonplace.",
-    descriptions: [
-      "angular",
-      "robust",
-      "strapping",
-      "carefree",
-      "lazy",
-      "arrogant",
-    ],
-    skillOptions: [
-      "cutting edge",
-      "artificial intelligence",
-      "custom flyer",
-      "surveillance",
-    ],
-    iconName: "navigate",
-  },
-  brutal: {
-    summary:
-      "The Brutal were forged in the most volatile conditions; war zones, slavery or in barbaric, bloodthirsty societies. Life was short and cruel, blood and pain are the norm. There was no room for weakness or mercy, no place for honor or fair play.",
-    descriptions: [
-      "tired",
-      "disfigured",
-      "suppressed",
-      "cruel",
-      "angry",
-      "severe",
-    ],
-    skillOptions: ["branded", "assassination", "toughness", "sneak attack"],
-    iconName: "flash",
-  },
-  colonist: {
-    summary:
-      "The Colonists are born and raised out on the fringes of galactic civilization, living in domes, colony pods or habitation modules, working diligently and tirelessly to terraform planets to make them more hospitable for the next generation.",
-    descriptions: ["hard", "serious", "calloused", "dusky", "solid", "prudent"],
-    skillOptions: ["resourceful", "tinker", "custom vehicle", "heavy lifting"],
-    iconName: "home",
-  },
-  crowded: {
-    summary:
-      "The Crowded have lived their lives shoulder-to- shoulder with humanity. They come from the cramped confines of heavily-populated hive cities, underground facilities, domes and space stations. They are one face among billions.",
-    descriptions: [
-      "lively",
-      "compact",
-      "stout",
-      "spare",
-      "loud",
-      "agoraphobic",
-    ],
-    skillOptions: ["affable", "contacts", "network", "bribe"],
-    iconName: "people",
-  },
-  galactic: {
-    summary:
-      "The Galactics are born and raised in orbital stations, starships, and asteroid mining colonies. Most have lived their whole lives among the stars, surrounded and protected by machinery and electronics, breathing recycled air and eating hydroponic food.",
-    descriptions: [
-      "sharp",
-      "guarded",
-      "stoic",
-      "isolated",
-      "energetic",
-      "graceful",
-    ],
-    skillOptions: ["fine tuning", "program", "weightlessness", "repair"],
-    iconName: "planet",
-  },
-  impoverished: {
-    summary:
-      "The Impoverished grew up on the margins, in the slums, in slavery and prisons and filth. They have little to call their own, only what they could scrape and scrounge together. They've fought tooth and nail to survive against oppressive conditions.",
-    descriptions: ["gaunt", "haggard", "sickly", "filthy", "vulgar", "fierce"],
-    skillOptions: ["scrappy", "stealth", "recklessness", "criminal"],
-    iconName: "trending-down",
-  },
-  privileged: {
-    summary:
-      "The Privileged are the nobility of the galaxy, the elite. Their families hold great power and influence, be it financial, political or religious. Moving in such exalted circles, wielding their family name and power, they have grown up expecting courtesy and respect.",
-    descriptions: [
-      "manicured",
-      "plump",
-      "groomed",
-      "snobbish",
-      "sleek",
-      "pompous",
-    ],
-    skillOptions: ["decorum", "luxury", "fame", "scapegoat"],
-    iconName: "star",
-  },
-  productive: {
-    summary:
-      "The Productive live in societies, cultures or groups that place high importance on education and social responsibility. From a young age they begin training for their destined profession, devoting any spare time to higher education and secondary vocations.",
-    descriptions: [
-      "slight",
-      "curious",
-      "faded",
-      "greying",
-      "detached",
-      "introverted",
-    ],
-    skillOptions: ["vocation", "calibrations", "education", "acumen"],
-    iconName: "construct",
-  },
-  regimented: {
-    summary:
-      "The Regimented have lived very strict lives. Whether in a militaristic society, a religious organisation or an authoritarian government, they have been indoctrinated to the advantages of discipline, obedience and loyalty.",
-    descriptions: [
-      "athletic",
-      "meditative",
-      "sturdy",
-      "organised",
-      "formal",
-      "strict",
-    ],
-    skillOptions: ["discipline", "leadership", "tactics", "deduction"],
-    iconName: "clipboard",
-  },
-  rustic: {
-    summary:
-      "The Rustic were raised on the very edges of galactic society, on the most inhospitable and savage worlds. With only basic machinery and tools, they were forced to toil by the sweat of their brow, shaping the hostile landscape.",
-    descriptions: ["wrinkled", "creaking", "wiry", "aged", "weary", "strong"],
-    skillOptions: ["hard labor", "construction", "survival", "chemistry"],
-    iconName: "hammer",
-  },
-};
+// const careersTable = {
+//   academic: {
+//     name: "academic",
+//     summary:
+//       "The Academic career represents years of study and learning, with a strong focus on science and logic. Academics can be found in specialist positions in other fields, leveraging their years of study.",
+//     descriptions: [
+//       "thin",
+//       "pallid",
+//       "elderly",
+//       "kind-hearted",
+//       "aloof",
+//       "distracted",
+//     ],
+//     skillOptions: [
+//       "education",
+//       "chemistry",
+//       "surgery",
+//       "deduction",
+//       "technobabble",
+//     ],
+//     iconName: "school",
+//     workspaceOptions: [
+//       {
+//         name: "medical",
+//         description:
+//           "Sterile environment. Medbay, cryotubes, surgical servo arms, isolation chamber, recovery ward.",
+//       },
+//       {
+//         name: "research",
+//         description:
+//           "Sensors gather scientific readings. Laboratory, containment units, sample scanners, sealed storage.",
+//       },
+//     ],
+//     advancementOptions: [
+//       "A life is saved or destroyed by science.",
+//       "A vital lesson is imparted.",
+//       "An experiment yields surprising results.",
+//       "A subject is thoroughly analyzed.",
+//       "A fascinating phenomenon is explained.",
+//     ],
+//   },
+//   clandestine: {
+//     name: "clandestine",
+//     summary:
+//       "The Clandestine career is a sinister profession, relying on information and invisibility. Clandestine operatives tend toward low profiles and subtlety, no matter their complimentary profession.",
+//     descriptions: [
+//       "hawk nosed",
+//       "sinister",
+//       "wiry",
+//       "bland",
+//       "suspicious",
+//       "bald",
+//     ],
+//     skillOptions: [
+//       "stealth",
+//       "sabotage",
+//       "assassination",
+//       "surveillance",
+//       "interrogation",
+//     ],
+//     iconName: "finger-print",
+//     workspaceOptions: [
+//       {
+//         name: "stealthy",
+//         description:
+//           "Difficult to detect, high tech camouflage, cloaking or concealment. Scanning bafflers, sound dampening, hidden doors/rooms.",
+//       },
+//       {
+//         name: "secure",
+//         description:
+//           "Sensors to track people and movement. Security cameras, monitoring stations, holding cells, security doors.",
+//       },
+//     ],
+//     advancementOptions: [
+//       "An intentional 'accident' happens.",
+//       "A victim experiences true fear.",
+//       "A conspiracy is uncovered.",
+//       "An act is performed covertly.",
+//       "A dark secret is extracted.",
+//     ],
+//   },
+//   commercial: {
+//     name: "commercial",
+//     summary:
+//       "The Commercial career's strength lies in making deals, acquiring goods and managing the complex web of inter-faction debt and influence. Almost all other careers benefit in some way from the Commercial's purchasing power.",
+//     descriptions: [
+//       "oily",
+//       "well-fed",
+//       "manicured",
+//       "harried",
+//       "miserly",
+//       "cunning",
+//     ],
+//     skillOptions: ["outfit", "marketing", "acumen", "luxury", "bribe"],
+//     iconName: "cash",
+//     workspaceOptions: [
+//       {
+//         name: "mercantile",
+//         description:
+//           "Prominent advertisement, easy access. Large cargo storage space, automatic loader-unloader systems.",
+//       },
+//       {
+//         name: "leisure",
+//         description:
+//           "Relaxing, inviting, well-lit. Studio, lounge, entertainment systems, recreation area.",
+//       },
+//     ],
+//     advancementOptions: [
+//       "A solution is purchased.",
+//       "A frivolous expense is made.",
+//       "A celebration is held.",
+//       "A rich resource is found.",
+//       "A cargo unit is exchanged.",
+//     ],
+//   },
+//   explorer: {
+//     name: "explorer",
+//     summary:
+//       "The Explorer is the most daring and risky career, forever seeking new horizons and new treasures. Other careers that regularly deal with harsh environments and unexplored reaches benefit from the Explorer's courage and survival instinct.",
+//     descriptions: [
+//       "weathered",
+//       "battered",
+//       "unkempt",
+//       "rude",
+//       "cheerful",
+//       "brash",
+//     ],
+//     skillOptions: [
+//       "boldly go",
+//       "reconnaissance",
+//       "survival",
+//       "recklessness",
+//       "custom vehicle",
+//     ],
+//     iconName: "compass",
+//     workspaceOptions: [
+//       {
+//         name: "rugged",
+//         description:
+//           "Withstands harsh climates and weather. Decontamination units, hydroponics facilities, advanced water/air/waste recyclers, self-sufficient.",
+//       },
+//       {
+//         name: "survey",
+//         description:
+//           "Planetary scanners (weather, geological activity, etc). Probe launcher, topography holo-projector, motor-pool.",
+//       },
+//     ],
+//     advancementOptions: [
+//       "An alien wilderness is traversed.",
+//       "A bold act fails spectacularly.",
+//       "A needed item is scrounged up.",
+//       "A ludicrous stunt turns the tides.",
+//       "A forgotten place is excavated.",
+//     ],
+//   },
+//   industrial: {
+//     name: "industrial",
+//     summary:
+//       "The Industrial career shapes its surroundings by constructing, improving and demolishing. Other careers benefit greatly from the Industrial's ability to create, repair, maintain a variety of machines.",
+//     descriptions: [
+//       "muscled",
+//       "grimy",
+//       "wrinkled",
+//       "rigorous",
+//       "rugged",
+//       "focused",
+//     ],
+//     skillOptions: ["repair", "construction", "tinker", "upgrade", "dismantle"],
+//     iconName: "construct",
+//     workspaceOptions: [
+//       {
+//         name: "refinery",
+//         description:
+//           "Heavy raw-material collectors. Gathers, processes raw matter into refined materials. Material storage tanks.",
+//       },
+//       {
+//         name: "manufactory",
+//         description:
+//           "Engineering bays. Builds, upgrades and repairs. Workbenches, tool racks, winches, pulleys, lifts.",
+//       },
+//     ],
+//     advancementOptions: [
+//       "A piece of junk proves pivotal.",
+//       "A piece of technology is 'improved'.",
+//       "A breakage occurs.",
+//       "An explosion alters the situation.",
+//       "A structural weakness is exposed.",
+//     ],
+//   },
+//   military: {
+//     name: "military",
+//     summary:
+//       "The Military career specializes in combat, with a heavy reliance on command, discipline and strategy. Careers that have to deal with hostilities or war zones benefit greatly when combined with the Military career's command of the battlefield.",
+//     descriptions: [
+//       "scarred",
+//       "grizzled",
+//       "massive",
+//       "skittish",
+//       "weary",
+//       "grim",
+//     ],
+//     skillOptions: [
+//       "tactics",
+//       "toughness",
+//       "unique weapon",
+//       "heavy lifting",
+//       "authority",
+//     ],
+//     iconName: "medal",
+//     workspaceOptions: [
+//       {
+//         name: "armored",
+//         description:
+//           "Made of reinforced materials. Difficult to damage, can withstand direct impacts and explosions. Reinforced blast doors, structurally sound.",
+//       },
+//       {
+//         name: "barracks",
+//         description:
+//           "Efficient, defensible, practical. Berthing for many soldiers, lockers, gym, training ring, mobilization area.",
+//       },
+//     ],
+//     advancementOptions: [
+//       "An objective is taken by force.",
+//       "A perilous order is obeyed.",
+//       "An injury is sustained.",
+//       "A problem is resolved with firepower.",
+//       "A worthy enemy is exterminated.",
+//     ],
+//   },
+//   personality: {
+//     name: "personality",
+//     summary:
+//       "The Personality career revolves around influencing others through charm, good looks and oratory. Personality is useful to any career that relies on persuasion or fame.",
+//     descriptions: [
+//       "stunning",
+//       "sexy",
+//       "chiselled",
+//       "placid",
+//       "soft",
+//       "haughty",
+//     ],
+//     skillOptions: [
+//       "fame",
+//       "leadership",
+//       "contacts",
+//       "inspiration",
+//       "diplomacy",
+//     ],
+//     iconName: "star",
+//     workspaceOptions: [
+//       {
+//         name: "habitation",
+//         description:
+//           "Living space for many guests or crew. Communal eating rooms, extended life-support/facilities.",
+//       },
+//       {
+//         name: "stately",
+//         description:
+//           "Expensive, luxurious, finely appointed décor. More expensive to maintain, but provides much higher quality of life.",
+//       },
+//     ],
+//     advancementOptions: [
+//       "A relationship changes drastically.",
+//       "A statement starts or ends a fight.",
+//       "A difficult promise is upheld.",
+//       "A rumor spreads like wildfire.",
+//       "An unlikely hero is exalted.",
+//     ],
+//   },
+//   scoudrel: {
+//     name: "scoudrel",
+//     summary:
+//       "The Scoundrel is the most underhanded career, relying on lies, violence, betrayal and theft to achieve goals. The Scoundrel career can be a benefit to other careers that live outside the law.",
+//     descriptions: ["thick", "dapper", "sly", "meaty", "slick", "cold"],
+//     skillOptions: [
+//       "criminal",
+//       "sneak attack",
+//       "scapegoat",
+//       "false identity",
+//       "addict",
+//     ],
+//     iconName: "glasses",
+//     workspaceOptions: [
+//       {
+//         name: "facade",
+//         description:
+//           "False identification/registry, disguised as something else. Crawlspaces, hidden compartments, false walls.",
+//       },
+//       {
+//         name: "sleazy",
+//         description:
+//           "Ramshackle, grimy, dimly lit. Space for drinking, smoking, recreational drug use, or other vices.",
+//       },
+//     ],
+//     advancementOptions: [
+//       "A deal ends in betrayal.",
+//       "A broken law goes unpunished.",
+//       "A valuable is stolen.",
+//       "A threat is pre-emptively removed.",
+//       "An unsuspecting victim is exploited.",
+//     ],
+//   },
+//   starfarer: {
+//     name: "starfarer",
+//     summary:
+//       "The Starfarer career involves traveling all over the galaxy, experiencing a multitude of cultures and societies. The Starfarer's ease with spaceships, vehicles and navigation make it useful to many other careers that are on the move.",
+//     descriptions: ["bony", "quick", "tall", "sunny", "restless", "tolerant"],
+//     skillOptions: [
+//       "weightlessness",
+//       "cosmopolitan",
+//       "navigation",
+//       "calibrations",
+//       "custom flyer",
+//     ],
+//     iconName: "rocket",
+//     workspaceOptions: [
+//       {
+//         name: "navigation",
+//         description:
+//           "Wide bay windows, observation decks, star-charts, holo-screens. Satellite uplinks, orbital tracking systems, airspace control/coordination tower.",
+//       },
+//       {
+//         name: "launch pad",
+//         description:
+//           "Aircraft/shuttle hangar with wide bay doors, launchpads for shuttles and speeders.",
+//       },
+//     ],
+//     advancementOptions: [
+//       "A passenger reaches a destination.",
+//       "A solution leverages gravity.",
+//       "A piloting maneuver causes a reversal.",
+//       "A system is pushed to the limit.",
+//       "A new culture is experienced.",
+//     ],
+//   },
+//   technocrat: {
+//     name: "technocrat",
+//     summary:
+//       "The Technocrat career is the most wired-in and computer-centric of the careers, focusing on programming, data and electronic warfare. Other careers benefit from the Technocrat's mastery of the computer systems that run almost all of civilized space.",
+//     descriptions: [
+//       "nearsighted",
+//       "lanky",
+//       "underfed",
+//       "smug",
+//       "awkward",
+//       "intense",
+//     ],
+//     skillOptions: [
+//       "upload",
+//       "hijack",
+//       "program",
+//       "network",
+//       "artificial intelligence",
+//     ],
+//     iconName: "power",
+//     workspaceOptions: [
+//       {
+//         name: "communication",
+//         description:
+//           "High-powered communications array, transceivers, antennae. Screens, conference rooms, holo-projectors.",
+//       },
+//       {
+//         name: "observer",
+//         description:
+//           "Advanced, multi-band sensors, capable of long-distance scans. Probe launchers. Recording equipment, shielded data storage.",
+//       },
+//     ],
+//     advancementOptions: [
+//       "A system's security is breached.",
+//       "A solution is found on the SectorNet.",
+//       "A computer crash causes chaos.",
+//       "A pivotal data cluster is accessed.",
+//       "An offending program is expunged.",
+//     ],
+//   },
+// };
+// const originsTable = {
+//   advanced: {
+//     summary:
+//       "The Advanced grew up in prosperous, high tech societies, well ahead of the galactic technology curve, enjoying an unprecedented quality of life. Technologies and gadgets that would be rare or fantastical elsewhere were considered commonplace.",
+//     descriptions: [
+//       "angular",
+//       "robust",
+//       "strapping",
+//       "carefree",
+//       "lazy",
+//       "arrogant",
+//     ],
+//     skillOptions: [
+//       "cutting edge",
+//       "artificial intelligence",
+//       "custom flyer",
+//       "surveillance",
+//     ],
+//     iconName: "navigate",
+//   },
+//   brutal: {
+//     summary:
+//       "The Brutal were forged in the most volatile conditions; war zones, slavery or in barbaric, bloodthirsty societies. Life was short and cruel, blood and pain are the norm. There was no room for weakness or mercy, no place for honor or fair play.",
+//     descriptions: [
+//       "tired",
+//       "disfigured",
+//       "suppressed",
+//       "cruel",
+//       "angry",
+//       "severe",
+//     ],
+//     skillOptions: ["branded", "assassination", "toughness", "sneak attack"],
+//     iconName: "flash",
+//   },
+//   colonist: {
+//     summary:
+//       "The Colonists are born and raised out on the fringes of galactic civilization, living in domes, colony pods or habitation modules, working diligently and tirelessly to terraform planets to make them more hospitable for the next generation.",
+//     descriptions: ["hard", "serious", "calloused", "dusky", "solid", "prudent"],
+//     skillOptions: ["resourceful", "tinker", "custom vehicle", "heavy lifting"],
+//     iconName: "home",
+//   },
+//   crowded: {
+//     summary:
+//       "The Crowded have lived their lives shoulder-to- shoulder with humanity. They come from the cramped confines of heavily-populated hive cities, underground facilities, domes and space stations. They are one face among billions.",
+//     descriptions: [
+//       "lively",
+//       "compact",
+//       "stout",
+//       "spare",
+//       "loud",
+//       "agoraphobic",
+//     ],
+//     skillOptions: ["affable", "contacts", "network", "bribe"],
+//     iconName: "people",
+//   },
+//   galactic: {
+//     summary:
+//       "The Galactics are born and raised in orbital stations, starships, and asteroid mining colonies. Most have lived their whole lives among the stars, surrounded and protected by machinery and electronics, breathing recycled air and eating hydroponic food.",
+//     descriptions: [
+//       "sharp",
+//       "guarded",
+//       "stoic",
+//       "isolated",
+//       "energetic",
+//       "graceful",
+//     ],
+//     skillOptions: ["fine tuning", "program", "weightlessness", "repair"],
+//     iconName: "planet",
+//   },
+//   impoverished: {
+//     summary:
+//       "The Impoverished grew up on the margins, in the slums, in slavery and prisons and filth. They have little to call their own, only what they could scrape and scrounge together. They've fought tooth and nail to survive against oppressive conditions.",
+//     descriptions: ["gaunt", "haggard", "sickly", "filthy", "vulgar", "fierce"],
+//     skillOptions: ["scrappy", "stealth", "recklessness", "criminal"],
+//     iconName: "trending-down",
+//   },
+//   privileged: {
+//     summary:
+//       "The Privileged are the nobility of the galaxy, the elite. Their families hold great power and influence, be it financial, political or religious. Moving in such exalted circles, wielding their family name and power, they have grown up expecting courtesy and respect.",
+//     descriptions: [
+//       "manicured",
+//       "plump",
+//       "groomed",
+//       "snobbish",
+//       "sleek",
+//       "pompous",
+//     ],
+//     skillOptions: ["decorum", "luxury", "fame", "scapegoat"],
+//     iconName: "star",
+//   },
+//   productive: {
+//     summary:
+//       "The Productive live in societies, cultures or groups that place high importance on education and social responsibility. From a young age they begin training for their destined profession, devoting any spare time to higher education and secondary vocations.",
+//     descriptions: [
+//       "slight",
+//       "curious",
+//       "faded",
+//       "greying",
+//       "detached",
+//       "introverted",
+//     ],
+//     skillOptions: ["vocation", "calibrations", "education", "acumen"],
+//     iconName: "construct",
+//   },
+//   regimented: {
+//     summary:
+//       "The Regimented have lived very strict lives. Whether in a militaristic society, a religious organisation or an authoritarian government, they have been indoctrinated to the advantages of discipline, obedience and loyalty.",
+//     descriptions: [
+//       "athletic",
+//       "meditative",
+//       "sturdy",
+//       "organised",
+//       "formal",
+//       "strict",
+//     ],
+//     skillOptions: ["discipline", "leadership", "tactics", "deduction"],
+//     iconName: "clipboard",
+//   },
+//   rustic: {
+//     summary:
+//       "The Rustic were raised on the very edges of galactic society, on the most inhospitable and savage worlds. With only basic machinery and tools, they were forced to toil by the sweat of their brow, shaping the hostile landscape.",
+//     descriptions: ["wrinkled", "creaking", "wiry", "aged", "weary", "strong"],
+//     skillOptions: ["hard labor", "construction", "survival", "chemistry"],
+//     iconName: "hammer",
+//   },
+// };
 
 export const generateSkill = (): Skill | null => {
   const skillKey = sample(Object.keys(skillsTable));

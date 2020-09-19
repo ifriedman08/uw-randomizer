@@ -27,6 +27,22 @@ const Worlds: FC = () => {
     setGeneratedPlanet(generatePlanet());
   };
 
+  const copyToClipboard = () => {
+    //Before we copy, we are going to select the text.
+    var text = document.getElementById("copy-target");
+    var selection = window.getSelection();
+    var range = document.createRange();
+    if (text) {
+      range.selectNodeContents(text);
+      selection?.removeAllRanges();
+      selection?.addRange(range);
+      //add to clipboard.
+      document.execCommand("copy");
+      selection?.removeAllRanges();
+      window.open("mailto:*?subject=World:", "_blank");
+    }
+  };
+
   const GeneratedComponent = (
     <>
       <Grid item xs={12}>
@@ -77,17 +93,33 @@ const Worlds: FC = () => {
   );
 
   return (
-    <Container>
-      <Button
-        variant="contained"
-        size="large"
-        color="primary"
-        onClick={generateNewPlanet}
-      >
-        Generate New Planet
-      </Button>
-      {GeneratedComponent}
-    </Container>
+    <>
+      <Container>
+        <Grid container justify="center" spacing={2}>
+          <Grid item>
+            <Button
+              variant="contained"
+              size="large"
+              color="primary"
+              onClick={generateNewPlanet}
+            >
+              Generate New Planet
+            </Button>
+          </Grid>
+          <Grid item>
+            <Button
+              variant="outlined"
+              size="large"
+              color="primary"
+              onClick={copyToClipboard}
+            >
+              Copy
+            </Button>
+          </Grid>
+        </Grid>
+        <div id="copy-target">{GeneratedComponent}</div>
+      </Container>
+    </>
   );
 };
 
