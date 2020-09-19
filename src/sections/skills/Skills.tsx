@@ -8,6 +8,7 @@ import { startCase } from "lodash";
 const SkillBox = styled.div`
   text-align: left;
   white-space: pre-wrap;
+  padding: 10px;
 `;
 const Container = styled.section`
   margin: 0 auto;
