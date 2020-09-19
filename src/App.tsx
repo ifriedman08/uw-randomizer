@@ -23,6 +23,7 @@ import { startCase } from "lodash";
 import Characters from "./sections/characters/Characters";
 import Mods from "./sections/mods/Mods";
 import Vessels from "./sections/vessels/Vessels";
+import Skills from "./sections/skills/Skills";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -56,6 +57,7 @@ function a11yProps(index: any) {
 const TABS = [
   { key: "questions", component: <Questions /> },
   { key: "items", component: <Items /> },
+  { key: "skills", component: <Skills /> },
   { key: "mods", component: <Mods /> },
   { key: "worlds", component: <Worlds /> },
   { key: "factions", component: <Factions /> },

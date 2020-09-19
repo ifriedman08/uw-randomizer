@@ -1,2 +1,3 @@
 export * from "./dnd";
-export * from "./uw";
+export * from "./uw-arch";
+export * from "./uw-full";
